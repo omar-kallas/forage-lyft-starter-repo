@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod, abstractproperty
+from serviceable import Serviceable
 
 class Car():
     def __init__(self, engine, battery):
@@ -6,7 +6,4 @@ class Car():
         self.battery = battery
 
     def needs_service(self):
-        if self.engine.needs_service() or self.battery.needs_service():
-            return True
-        else:
-            return False
+        return self.engine.needs_service() or self.battery.needs_service()
